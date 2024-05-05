@@ -9,7 +9,7 @@ export const TransmissionPage = () => {
 
     useEffect(() => {
         dispatch(getTransmissions());
-    }, [transmissions, dispatch]);
+    }, []);
 
     return (
         <>

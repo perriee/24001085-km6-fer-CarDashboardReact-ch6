@@ -9,7 +9,7 @@ export const SizePage = () => {
 
     useEffect(() => {
         dispatch(getSizes());
-    }, [sizes, dispatch]);
+    }, []);
 
     return (
         <>

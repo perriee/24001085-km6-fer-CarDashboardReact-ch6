@@ -17,7 +17,7 @@ export const CarDetailPage = () => {
     }, [id, dispatch]);
 
     return (
-        <Row>
+        <Row className="mb-5">
             <Col md={6} className="offset-md-3">
                 <Card>
                     <Card.Body>

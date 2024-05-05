@@ -9,7 +9,7 @@ export const TypePage = () => {
 
     useEffect(() => {
         dispatch(getTypes());
-    }, [types, dispatch]);
+    }, []);
 
     return (
         <>

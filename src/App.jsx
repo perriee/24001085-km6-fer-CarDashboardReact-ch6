@@ -11,11 +11,6 @@ import { LoginPage } from "./pages/Login";
 import { RegisterPage } from "./pages/Register";
 import { HomePage } from "./pages/Home";
 import { ProfilePage } from "./pages/Profile";
-
-// COMPONENTS
-import { NavbarComponent } from "./components/Navbar";
-import { Protected } from "./components/Protected";
-import { NonProtected } from "./components/NonProtected";
 import { CarDetailPage } from "./pages/Car/detail";
 import { DashboardAdminPage } from "./pages/Admin/Dashboard";
 import { CarPage } from "./pages/Admin/Dashboard/Car";
@@ -25,6 +20,12 @@ import { ManufacturePage } from "./pages/Admin/Dashboard/Manufacture";
 import { TypePage } from "./pages/Admin/Dashboard/Type";
 import { SizePage } from "./pages/Admin/Dashboard/Size";
 import { TransmissionPage } from "./pages/Admin/Dashboard/Transmission";
+import { CreateManufacturePage } from "./pages/Admin/Dashboard/Manufacture/CreateManufacturePage";
+
+// COMPONENTS
+import { NavbarComponent } from "./components/Navbar";
+import { Protected } from "./components/Protected";
+import { NonProtected } from "./components/NonProtected";
 
 const router = createBrowserRouter([
     {
@@ -139,6 +140,17 @@ const router = createBrowserRouter([
                 <NavbarComponent />
                 <Container className="mt-5">
                     <ManufacturePage />
+                </Container>
+            </Protected>
+        ),
+    },
+    {
+        path: "/dashboard/manufactures/create",
+        element: (
+            <Protected roles={["superadmin", "admin"]}>
+                <NavbarComponent />
+                <Container className="mt-5">
+                    <CreateManufacturePage />
                 </Container>
             </Protected>
         ),

@@ -13,6 +13,8 @@ export const HomePage = () => {
     }, [dispatch]);
 
     return (
-        <Row>{cars.length > 0 && cars.map((car) => <CarCard key={car?.id} carData={car} />)}</Row>
+        <Row className="mb-5">
+            {cars.length > 0 && cars.map((car) => <CarCard key={car?.id} carData={car} />)}
+        </Row>
     );
 };

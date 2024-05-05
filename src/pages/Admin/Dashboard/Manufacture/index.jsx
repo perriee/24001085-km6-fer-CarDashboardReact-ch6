@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import { useDispatch, useSelector } from "react-redux";
 import { getManufactures } from "../../../../redux/actions/manufacture";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 export const ManufacturePage = () => {
     const dispatch = useDispatch();
@@ -9,15 +11,15 @@ export const ManufacturePage = () => {
 
     useEffect(() => {
         dispatch(getManufactures());
-    }, [manufactures, dispatch]);
+    }, []);
 
     return (
         <>
             <div className="d-flex justify-content-between align-items-center mb-4">
                 <h2>Manufactures</h2>
-                {/* <Button variant="primary" as={Link} to={"/dashboard/cars/create"}>
+                <Button variant="primary" as={Link} to={"/dashboard/manufactures/create"}>
                     Create Manufacture
-                </Button> */}
+                </Button>
             </div>
             <Table striped bordered hover>
                 <thead>
